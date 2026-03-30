@@ -140,7 +140,7 @@ async function loadCompetitions() {
   try {
     const competitionsData = await endpoints.getCompetitions()
 
-    const result = competitionsData || []
+    let result = competitionsData || []
     if (searchName.value) {
       result = result.filter(c => c.name.includes(searchName.value))
     }
